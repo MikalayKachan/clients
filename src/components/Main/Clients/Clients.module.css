@@ -1,0 +1,9 @@
+.body {
+    width: 915px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 50px;
+}
