@@ -12,13 +12,13 @@ import date1 from '../../../../ui/icons/date.svg'
     const map = map1
     const date = date1
 
-export const User = () => {
+export const User = (props) => {
     
 
-    const name = 'Darrell'
-    const country = 'Germany'
-    const number = '+44 161 496 0997'
-    const birth = '22.10.2001'
+    const name = props.name
+    const country = props.country
+    const number = props.phone
+    const birth = props.age
 
 
     return (
