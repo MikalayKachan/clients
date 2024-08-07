@@ -1,10 +1,10 @@
 import React from "react";
 
 import styles from './User.module.css'
-import ava1 from '../../../../ui/icons/ava.png'
-import phone1 from '../../../../ui/icons/phone.png'
-import map1 from '../../../../ui/icons/map-pin.png'
-import date1 from '../../../../ui/icons/date.png'
+import ava1 from '../../../../ui/icons/ava.svg'
+import phone1 from '../../../../ui/icons/phone.svg'
+import map1 from '../../../../ui/icons/map-pin.svg'
+import date1 from '../../../../ui/icons/date.svg'
 
 
     const ava = ava1

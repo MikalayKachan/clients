@@ -52,10 +52,6 @@
     margin-right: 10px;
 }
 
-.vector {
-    height: 4px;
-    width: 8px;
-}
 
 .dropContent {
     margin-left: 10px;
@@ -105,10 +101,6 @@
     background: rgba(38, 38, 38, 0.12);
 }
 
-.arrow {
-    height: 20px;
-    color:rgba(0, 0, 0, 0.15)
-}
 
 .on {
     display: flex;
@@ -126,11 +118,22 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
+
+    stroke: rgba(245, 27, 27, 1);
 }
+
+
 
 .off {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
+    gap: 7px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+
+    stroke: rgba(49, 49, 49, 1);
 }
