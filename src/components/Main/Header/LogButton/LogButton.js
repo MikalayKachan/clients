@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from './LogButton.module.css'
-import LogIn from '../../../../ui/icons/log-in.png'
+import LogIn from '../../../../ui/icons/log-in.svg'
 
 export const LogButton = () => {
     return (
