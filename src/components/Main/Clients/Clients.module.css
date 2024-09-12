@@ -1,3 +1,7 @@
+.Wrapper {
+    max-width: max-content;
+}
+
 .drop {
     width: 250px;
     height: 40px;

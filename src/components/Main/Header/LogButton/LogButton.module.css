@@ -1,10 +1,29 @@
-.main {
+.mainOut {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px 10px 20px;
+    gap: 7px;
+    border-radius: 4px;
+    height: auto;
+    cursor: pointer;
+}
+
+.textOut {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+
+.mainIn {
     display: flex;
     justify-content: space-around;
     padding: 10px 20px 10px 20px;
     background-color:rgba(245, 27, 27, 1);
     border-radius: 4px;
     height: auto;
+    cursor: pointer;
 }
 
 .log {
@@ -13,7 +32,7 @@
     margin-right: 8px;
 }
 
-.text {
+.textIn {
     width: 53px;
     height: 20px;
     color: rgba(255, 255, 255, 1);
