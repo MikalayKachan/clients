@@ -6,6 +6,7 @@ import { ClientsContainer } from "./Clients/ClientsContainer";
 import { LoginModal } from "../Modals/LoginModal/LoginModal";
 import { LogoutModal } from "../Modals/LogoutModal/LogoutModal";
 import Modal from "../shared/Modal/Modal";
+import { EditProfileModal } from "../Modals/EditProfileModal/EditProfileModal";
 
 
 export const Main = () => {
@@ -14,6 +15,7 @@ export const Main = () => {
     const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
     const [isAuth, setAuth] = useState(JSON.parse(localStorage.getItem("auth")));
 
+    const [isEditProfileOpen, setEditProfileOpen] = useState(false);
 
     const authHeandler = (auth) => {
         setAuth(auth)
@@ -31,7 +33,7 @@ export const Main = () => {
             <ClientsContainer isAuth={isAuth}/>
             <LoginModal isModalOpen={isLoginModalOpen} setModalOpen={setLoginModalOpen} authHeandler={authHeandler} />
             <LogoutModal isModalOpen={isLogoutModalOpen} setModalOpen={setLogoutModalOpen} authHeandler={authHeandler} />
-
+            <EditProfileModal isModalOpen={isEditProfileOpen} setModalOpen={setEditProfileOpen}/>
         </div>
     )
 }
