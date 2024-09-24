@@ -2,10 +2,10 @@ import React from "react";
 import { Clients } from "./Clients";
 
 
-export const ClientsContainer = () => {
+export const ClientsContainer = ({isAuth}) => {
     return (
         <div >
-            <Clients/>
+            <Clients isAuth={isAuth}/>
         </div>
     )
 }

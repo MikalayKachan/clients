@@ -20,16 +20,14 @@ const outHeandler = () => {
         <div className={styles.sure}>
           Are you sure you want to sign out?
         </div>
-        <button type="submit" className={styles.signOutBtn} onClick={outHeandler}>
+        <button className={styles.signOutBtn} onClick={outHeandler}>
           Yes, sign out
         </button>
         <button className={styles.closeBtn} onClick={() => setModalOpen(false)}>
           No, close
         </button>
       </div>
-
     </Modal>
-
   )
 };
 
