@@ -28,7 +28,7 @@ export const Main = () => {
     return (
         <div className={styles.body}>
             <Header inOutFunc={inOutFunc} isAuth={isAuth} />
-            <ClientsContainer />
+            <ClientsContainer isAuth={isAuth}/>
             <LoginModal isModalOpen={isLoginModalOpen} setModalOpen={setLoginModalOpen} authHeandler={authHeandler} />
             <LogoutModal isModalOpen={isLogoutModalOpen} setModalOpen={setLogoutModalOpen} authHeandler={authHeandler} />
 
