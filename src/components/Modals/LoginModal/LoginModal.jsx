@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage as Error } from "formik";
 import * as Yup from "yup";
 import axios from 'axios';
+import Cookies from "js-cookie";
 
 import styles from "./LoginModal.module.css";
 import Modal from "../../shared/Modal/Modal";
@@ -26,29 +27,32 @@ export const LoginModal = ({ isModalOpen, setModalOpen, authHandler }) => {
 
     setModalOpen(false);
     axios
-      .post(`http://localhost:3333/user/login`, {
-        login: responseEmail,
-        password: responsePassword
-      })
-      .then(response => {
-        console.log("response", response);
-        if (response.status === 200) {
-          authHandler(true);
-        } else {
-          console.log("Ошибка: неверный статус ответа");
-        }
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log("Ошибка ответа от сервера:", error.response.data);
-        } else if (error.request) {
-          console.log("Запрос отправлен, но ответа нет:", error.request);
-        } else {
-          console.log("Произошла ошибка:", error.message);
-        }
-      })
-      .finally(() => setSubmitting(false));
-  };
+        .post(`http://localhost:3333/user/login`, {
+            login: responseEmail,
+            password: responsePassword
+        })
+        .then(response => {
+            console.log("response", response);
+            if (response.status === 200) {
+                const token = response.data.token; 
+                Cookies.set("authToken", token, { expires: 1 }); 
+                authHandler(true);
+            } else {
+                console.log("Ошибка: неверный статус ответа");
+            }
+        })
+        .catch(error => {
+            if (error.response) {
+                console.log("Ошибка ответа от сервера:", error.response.data);
+            } else if (error.request) {
+                console.log("Запрос отправлен, но ответа нет:", error.request);
+            } else {
+                console.log("Произошла ошибка:", error.message);
+            }
+        })
+        .finally(() => setSubmitting(false));
+};
+
 
   const [show, setShow] = useState(false);
 
@@ -77,7 +81,7 @@ export const LoginModal = ({ isModalOpen, setModalOpen, authHandler }) => {
                 </div>
                 <div className={styles.password}>
                   <Field
-                    type={show ? "text" : "password"} // Правильное отображение пароля
+                    type={show ? "text" : "password"} 
                     name="password"
                     placeholder="password"
                     className={styles.input}

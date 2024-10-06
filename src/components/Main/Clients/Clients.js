@@ -11,7 +11,7 @@ import { useOnClickOutside } from "../../../utils/index";
 const sort = "/icons/sort.svg";
 const drop = "/icons/drop.svg";
 
-export const Clients = ({ isAuth }) => {
+export const Clients = ({ isAuth, setModalOpen }) => {
   const [data, setData] = useState([]);
 
   const ref = useRef();
@@ -30,11 +30,14 @@ export const Clients = ({ isAuth }) => {
 
   const dataToRender = data.map(c => (
     <User
+      key={c.id}
+      id={c.id}
       name={c.name}
       age={c.age}
       phone={c.phone}
       country={c.country}
       isAuth={isAuth}
+      setModalOpen={setModalOpen}
     />
   ));
 
