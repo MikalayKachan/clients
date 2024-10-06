@@ -4,10 +4,10 @@ import styles from "./LogoutModal.module.css";
 import Modal from "../../shared/Modal/Modal";
 
 
-export const LogoutModal = ({ isModalOpen, setModalOpen, authHeandler }) => {
+export const LogoutModal = ({ isModalOpen, setModalOpen, authHandler }) => {
 
-const outHeandler = () => {
-  authHeandler(false)
+const outHandler = () => {
+  authHandler(false)
   setModalOpen(false)
 }
 
@@ -20,7 +20,7 @@ const outHeandler = () => {
         <div className={styles.sure}>
           Are you sure you want to sign out?
         </div>
-        <button className={styles.signOutBtn} onClick={outHeandler}>
+        <button className={styles.signOutBtn} onClick={outHandler}>
           Yes, sign out
         </button>
         <button className={styles.closeBtn} onClick={() => setModalOpen(false)}>

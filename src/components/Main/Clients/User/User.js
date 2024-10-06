@@ -10,9 +10,15 @@ const date = "/icons/date.svg";
 const edit = "/icons/edit.svg";
 const backet = "/icons/backet.svg";
 
-export const User = ({ name, age, phone, country, isAuth }) => {
+
+export const User = ({ id, name, age, phone, country, isAuth, setModalOpen }) => {
+
+  const editHandler = () => {
+    setModalOpen(true)
+  }
+
   return (
-    <div className={cn(styles.user, { [styles.admin]: isAuth })}>
+    <div className={cn(styles.user, { [styles.admin]: isAuth })} onClick={editHandler} >
       <div className={styles.buttons}>
         <img src={edit} alt="edit" className={styles.edit} />
         <img src={backet} alt="backet" className={styles.edit} />
